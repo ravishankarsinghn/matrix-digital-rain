@@ -1,5 +1,6 @@
+"use strict";
+
 const canvas = document.getElementById("matrix");
-console.log(canvas);
 const context = canvas.getContext("2d");
 
 // set height and width
@@ -13,7 +14,8 @@ const num = "0123456789";
 
 // joining all character
 // we can assign any value to "alphabet" variable, that we want to iritate
-const alphabet = latin + num;
+// const character = latin + num;
+const character = "01";
 
 // assigning font-size and width of the columns
 const fontSize = 16;
@@ -32,7 +34,7 @@ const draw = () => {
   context.font = fontSize + "px monospace";
 
   for (let i = 0; i < rainDrops.length; i++) {
-    const text = alphabet.charAt(Math.floor(Math.random() * alphabet.length));
+    const text = character.charAt(Math.floor(Math.random() * character.length));
     context.fillText(text, i * fontSize, rainDrops[i] * fontSize);
 
     if (rainDrops[i] * fontSize > canvas.height && Math.random() > 0.975)
